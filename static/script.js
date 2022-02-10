@@ -23,7 +23,7 @@ function show_books() {
 
             let read_button = document.createElement("button")
 
-            read_button.innerHTML  = "Read it"
+            read_button.innerText  = "Read it"
 
             read_button.setAttribute("class", 'btn-primary')
             read_button.setAttribute("style", 'float: right; margin-right: 20px')
