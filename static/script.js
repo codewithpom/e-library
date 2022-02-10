@@ -11,7 +11,7 @@ function show_books() {
 
             let book_name_tag = document.createElement('li')
 
-            book_name_tag.innerHTML = json_data[jsonDataKey].toString()
+            book_name_tag.innerText = json_data[jsonDataKey].toString()
 
             book_name_tag.setAttribute("class", "list-group-item")
 
