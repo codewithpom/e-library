@@ -3,6 +3,8 @@ import os
 from flask import Flask, render_template, request
 import requests
 from flask_cors import CORS
+from flask.werkzeug import secure_filename
+
 app = Flask('app')
 base_url = "https://raw.githubusercontent.com/MrAlex6204/Books/master/"
 
@@ -44,6 +46,7 @@ def read_book():
         complete_url = base_url + book_name
 
         file = requests.get(complete_url)
+        book_name = secure_filename(book_name)
         if not os.path.exists(os.path.join('static/books', book_name)):
                 create = open(os.path.join('static/books', book_name), 'x')
                 create.close()
